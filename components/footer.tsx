@@ -24,7 +24,7 @@ export function Footer() {
               pet care.
             </p>
             <p className="text-primary-foreground/60 text-xs sm:text-sm mb-3 sm:mb-4">
-              Founded by Katie Jones & Lisa Elgie
+              Founded by Dr Katie Jones & Dr Lisa Elgie
             </p>
             <div className="flex gap-3 sm:gap-4">
               <a

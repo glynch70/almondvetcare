@@ -9,7 +9,7 @@ export function OurStory() {
 
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p>
-              Katie Jones and Lisa Elgie have worked in veterinary medicine for many years. Throughout their careers,
+              Dr Katie Jones and Dr Lisa Elgie have worked in veterinary medicine for many years. Throughout their careers,
               they've seen firsthand how corporate ownership can impact the quality and personal nature of pet care.
             </p>
 
