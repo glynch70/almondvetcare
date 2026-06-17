@@ -66,8 +66,57 @@ export function Team() {
           </div>
         </div>
 
-        <div className="text-center mt-8 sm:mt-12">
-          <p className="text-base sm:text-lg text-muted-foreground italic px-4">Other staff to follow</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          {/* Claire */}
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-100 hover:border-[#00bcd4] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
+            <div className="mb-4 sm:mb-6">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg group-hover:border-[#00bcd4] transition-colors duration-300">
+                <img
+                  src="/images/nurse-claire.png"
+                  alt="Claire, Head Nurse"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <h4 className="text-xl sm:text-2xl font-bold text-center mb-1 text-[#1e3a5f]">Claire</h4>
+              <p className="text-[#7ed321] font-bold text-center text-sm sm:text-base">Head Nurse</p>
+            </div>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Claire qualified as a Registered Veterinary Nurse in 2014 and has since gone on to complete her
+              Certificate in Emergency and Critical Care. She is also a Clinical Coach, supporting and training student
+              veterinary nurses throughout their studies and early careers.
+            </p>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
+              Claire is passionate about sharing her knowledge and experience with the wider team and is always on hand
+              to offer guidance and support when needed. Although she enjoys all aspects of veterinary nursing, Claire
+              has a particular interest in inpatient care, post-operative nursing, and emergency and critical care.
+              Outside of work, Claire enjoys reading, spending time with family and friends, and going on adventures
+              with her Maremma Sheepdog, Ivar.
+            </p>
+          </div>
+
+          {/* Katie - Veterinary Nurse */}
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-100 hover:border-[#00bcd4] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
+            <div className="mb-4 sm:mb-6">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg group-hover:border-[#00bcd4] transition-colors duration-300">
+                <img
+                  src="/images/nurse-katie.png"
+                  alt="Katie, Veterinary Nurse"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <h4 className="text-xl sm:text-2xl font-bold text-center mb-1 text-[#1e3a5f]">Katie</h4>
+              <p className="text-[#7ed321] font-bold text-center text-sm sm:text-base">Veterinary Nurse</p>
+            </div>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Katie is a brilliant nurse with a real passion for patient care and always goes above and beyond to make
+              sure every pet feels safe, comfortable, and well looked after during their visit. She has a particular
+              soft spot for feline patients and has the patience of an absolute saint — especially when it comes to
+              nervous pets who need a little extra time, reassurance, and gentle handling.
+            </p>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
+              Outside of work Katie enjoys spending time with her cat Blousey, going to the theatre and keeping fit.
+            </p>
+          </div>
         </div>
       </div>
     </section>

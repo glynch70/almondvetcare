@@ -6,6 +6,7 @@ import { Services } from "@/components/services"
 import { Team } from "@/components/team"
 import { OurClinic } from "@/components/our-clinic"
 import { Emergency } from "@/components/emergency"
+import { CarePlan } from "@/components/care-plan"
 import { Pricing } from "@/components/pricing"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -23,6 +24,7 @@ export default function Home() {
         <Team />
         <OurClinic />
         <Emergency />
+        <CarePlan />
         <Pricing />
         <SpanielWithKitten />
         <Contact />
