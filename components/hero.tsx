@@ -33,7 +33,8 @@ export function Hero() {
             Perthshire's Newest Independent Vet Practice
           </h1>
           <p className="text-base md:text-lg text-white/80 mb-6 leading-relaxed">
-            Founded by Katie Jamieson and Lisa - experienced veterinary professionals dedicated to independent pet care
+            Founded by Dr. Katie Jones and Dr. Lisa Elgie - experienced veterinary professionals dedicated to
+            independent pet care
           </p>
           <p className="text-2xl md:text-3xl text-white/90 mb-6 font-bold">Opening Spring 2026</p>
           <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed text-pretty">

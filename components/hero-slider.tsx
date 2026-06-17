@@ -20,7 +20,7 @@ const slides = [
   },
   {
     id: 2,
-    title: "Founded by Katie Jones & Lisa Elgie",
+    title: "Founded by Dr. Katie Jones & Dr. Lisa Elgie",
     subtitle: "", // Removed "Combined experience in Perth" text
     badge: "Meet Our Founders",
     description: "Independent vets putting animal welfare first",

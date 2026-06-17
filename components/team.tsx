@@ -20,7 +20,7 @@ export function Team() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h4 className="text-xl sm:text-2xl font-bold text-center mb-1 text-[#1e3a5f]">Katie Jones</h4>
+              <h4 className="text-xl sm:text-2xl font-bold text-center mb-1 text-[#1e3a5f]">Dr. Katie Jones</h4>
               <p className="text-[#7ed321] font-bold text-center text-sm sm:text-base">
                 Co-Founder & Veterinary Surgeon
               </p>
@@ -47,7 +47,7 @@ export function Team() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h4 className="text-xl sm:text-2xl font-bold text-center mb-1 text-[#1e3a5f]">Lisa Elgie</h4>
+              <h4 className="text-xl sm:text-2xl font-bold text-center mb-1 text-[#1e3a5f]">Dr. Lisa Elgie</h4>
               <p className="text-[#7ed321] font-bold text-center text-sm sm:text-base">
                 Co-Founder & Veterinary Surgeon
               </p>
