@@ -26,9 +26,9 @@ export function Team() {
               </p>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Katie is a dedicated veterinarian with 10 years of experience, graduating from the University of Glasgow
-              before beginning her career in mixed practice. She now focuses exclusively on small animal care, where her
-              lifelong passion for animals truly shines.
+              Katie is a dedicated veterinarian who graduated from the University of Glasgow in 2015 before beginning
+              her career in mixed practice. She now focuses exclusively on small animal care, where her lifelong
+              passion for animals truly shines.
             </p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
               Outside the clinic, Katie's life is just as full of furry (and hooved!) friends. She keeps busy with her
@@ -53,10 +53,10 @@ export function Team() {
               </p>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Lisa is a small animal veterinarian with nine years of experience, graduating from the University of
-              Edinburgh before beginning her career in mixed practice in Highland Perthshire. She soon discovered her
-              passion for small animal medicine and has focused on it ever since. Becoming a vet has been her dream
-              since childhood, and that dedication continues to shape her compassionate, patient-centered approach.
+              Lisa is a small animal veterinarian who graduated from the University of Edinburgh in 2016 before
+              beginning her career in mixed practice in Highland Perthshire. She soon discovered her passion for small
+              animal medicine and has focused on it ever since. Becoming a vet has been her dream since childhood, and
+              that dedication continues to shape her compassionate, patient-centered approach.
             </p>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
               Outside of work, Lisa enjoys an active and animal-filled life with her husband, their Cocker Spaniel
