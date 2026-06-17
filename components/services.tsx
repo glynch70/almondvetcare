@@ -52,7 +52,7 @@ export function Services() {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00bcd4] to-[#7ed321]" />
             <CardContent className="p-4 sm:p-6 text-center">
               <p className="text-sm sm:text-base md:text-lg font-bold text-[#1e3a5f] leading-relaxed">
-                All services available from Spring 2026 • <span className="text-[#00bcd4]">Pre-book soon</span>
+                Now open • <span className="text-[#00bcd4]">Book your appointment today</span>
               </p>
             </CardContent>
           </Card>

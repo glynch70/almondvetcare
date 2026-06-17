@@ -6,7 +6,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Almond Vet Care | Independent Vets in Perth, Scotland",
   description:
-    "Independent veterinary clinic in Perth, Scotland putting animal welfare first. Compassionate care for your pets. Opening Spring 2026.",
+    "Independent veterinary clinic in Perth, Scotland putting animal welfare first. Compassionate care for your pets. Now open.",
   generator: "v0.app",
   icons: {
     icon: "/images/almond-circle-logo.png",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Almond Vet Care | Independent Vets in Perth, Scotland",
     description:
-      "Independent veterinary clinic in Perth, Scotland putting animal welfare first. Compassionate care for your pets. Opening Spring 2026.",
+      "Independent veterinary clinic in Perth, Scotland putting animal welfare first. Compassionate care for your pets. Now open.",
     url: "https://almondvetcare.org",
     siteName: "Almond Vet Care",
     images: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Almond Vet Care | Independent Vets in Perth, Scotland",
-    description: "Independent veterinary clinic in Perth, Scotland putting animal welfare first. Opening Spring 2026.",
+    description: "Independent veterinary clinic in Perth, Scotland putting animal welfare first. Now open.",
     images: ["https://almondvetcare.org/images/almond-circle-logo.png"],
   },
   keywords: [
@@ -87,10 +87,26 @@ export default function RootLayout({
                 latitude: 56.420861,
                 longitude: -3.468833,
               },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                description: "Opening Spring 2026",
-              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  opens: "08:00",
+                  closes: "19:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Saturday",
+                  opens: "08:00",
+                  closes: "12:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Sunday",
+                  opens: "09:00",
+                  closes: "12:00",
+                },
+              ],
               priceRange: "££",
               founder: [
                 {

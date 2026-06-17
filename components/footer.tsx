@@ -126,6 +126,7 @@ export function Footer() {
 
           <div className="text-center text-xs sm:text-sm text-primary-foreground/60">
             <p>&copy; {new Date().getFullYear()} Almond Vet Care. All rights reserved.</p>
+            <p className="mt-2">Almond Vet Care is owned and operated by Dr Kate Jones and Dr Lisa Elgie.</p>
             <p className="mt-2">
               Website by{" "}
               <a

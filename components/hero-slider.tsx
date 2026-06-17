@@ -10,8 +10,8 @@ const slides = [
   {
     id: 1,
     title: "Perthshire's Newest Independent Vet Practice",
-    subtitle: "Now Taking Registrations",
-    badge: "Opening Spring 2026",
+    subtitle: "Now Open - Register & Book Today",
+    badge: "Now Open",
     description: "",
     cta: "Register Your Pet",
     ctaLink: "#contact",

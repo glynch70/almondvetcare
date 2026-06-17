@@ -4,7 +4,7 @@ import { Check } from "lucide-react"
 export function About() {
   const highlights = [
     "Independent practice - no corporate chain!",
-    "Opening Spring 2026",
+    "Now open in Perth",
     "Compassionate care",
     "Transparent pricing with our price promise",
   ]
@@ -21,11 +21,11 @@ export function About() {
               <span className="text-xs sm:text-sm font-bold text-[#1e3a5f] uppercase tracking-wide">About Us</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance text-[#1e3a5f]">
-              Coming to Perth <span className="text-[#00bcd4]">Spring 2026</span>
+              Now Open in <span className="text-[#00bcd4]">Perth</span>
             </h2>
             <div className="space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground mb-6 sm:mb-8">
               <p>
-                We're building Perth's newest independent vet practice, founded on the principle that animal welfare
+                We're Perth's newest independent vet practice, founded on the principle that animal welfare
                 should always come first.
               </p>
               <p>
@@ -35,7 +35,7 @@ export function About() {
               </p>
               <p>
                 We're looking forward to getting to know you and your pets, building lasting relationships based on
-                trust and understanding. Register now to secure your place as a founding client.
+                trust and understanding. Register now to join our growing family of clients.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export function About() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/60 to-transparent" />
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
               <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#7ed321] shadow-lg rounded-full animate-pulse-soft">
-                <span className="text-xs sm:text-sm font-bold text-white">Opening Spring 2026</span>
+                <span className="text-xs sm:text-sm font-bold text-white">Now Open</span>
               </div>
             </div>
           </div>
