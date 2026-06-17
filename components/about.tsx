@@ -115,7 +115,7 @@ export function About() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <h4 className="text-lg sm:text-xl font-bold text-[#1e3a5f] mb-1">Katie Jones</h4>
+                <h4 className="text-lg sm:text-xl font-bold text-[#1e3a5f] mb-1">Dr Katie Jones</h4>
                 <p className="text-sm sm:text-base text-[#7ed321] font-semibold">Co-Founder & Veterinary Surgeon</p>
               </div>
 
@@ -128,7 +128,7 @@ export function About() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <h4 className="text-lg sm:text-xl font-bold text-[#1e3a5f] mb-1">Lisa Elgie</h4>
+                <h4 className="text-lg sm:text-xl font-bold text-[#1e3a5f] mb-1">Dr Lisa Elgie</h4>
                 <p className="text-sm sm:text-base text-[#7ed321] font-semibold">Co-Founder & Veterinary Surgeon</p>
               </div>
             </div>
