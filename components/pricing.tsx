@@ -55,7 +55,7 @@ export function Pricing() {
       title: "Other Services",
       items: [
         { procedure: "Animal health certificate", price: "£200" },
-        { procedure: "Put to sleep (including sedation and general anaesthetic)", price: "£130" },
+        { procedure: "Put to sleep (including sedation and general cremation)", price: "£130" },
       ],
     },
   ]
