@@ -67,7 +67,16 @@ export function Header() {
                 asChild
                 className="bg-gradient-to-r from-[#0891b2] to-[#10b981] hover:from-[#0e7490] hover:to-[#059669] text-white shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
               >
-                <a href="#contact">Pre-Register</a>
+                <a href="#contact">Register</a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-2 border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white font-semibold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 bg-transparent"
+              >
+                <a href="https://my.provet.com/almond-vet-care-limited" target="_blank" rel="noopener noreferrer">
+                  Online Booking
+                </a>
               </Button>
             </div>
           </nav>
@@ -107,7 +116,21 @@ export function Header() {
                   className="bg-gradient-to-r from-[#0891b2] to-[#10b981] hover:from-[#0e7490] hover:to-[#059669] text-white w-full h-12 text-base"
                 >
                   <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    Pre-Register
+                    Register
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="col-span-2 border-2 border-[#0891b2] text-[#0891b2] hover:bg-[#0891b2] hover:text-white font-semibold w-full h-12 text-base bg-transparent"
+                >
+                  <a
+                    href="https://my.provet.com/almond-vet-care-limited"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Online Booking
                   </a>
                 </Button>
               </div>

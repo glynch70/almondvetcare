@@ -14,7 +14,7 @@ export default function ThankYouPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#1e3a5f]">
-            Thank You for Pre-Registering!
+            Thank You for Registering!
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground mb-6 leading-relaxed max-w-xl mx-auto">

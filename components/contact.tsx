@@ -1,66 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock, Calendar } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export function Contact() {
-  const [selectedPetType, setSelectedPetType] = useState<string>("")
-
-  const breedOptions = {
-    dog: [
-      "Labrador Retriever",
-      "German Shepherd",
-      "Golden Retriever",
-      "French Bulldog",
-      "Bulldog",
-      "Poodle",
-      "Beagle",
-      "Rottweiler",
-      "Yorkshire Terrier",
-      "Boxer",
-      "Dachshund",
-      "Cocker Spaniel",
-      "Border Collie",
-      "Mixed Breed",
-      "Other",
-    ],
-    cat: [
-      "British Shorthair",
-      "Persian",
-      "Siamese",
-      "Maine Coon",
-      "Ragdoll",
-      "Bengal",
-      "Scottish Fold",
-      "Sphynx",
-      "Domestic Shorthair",
-      "Domestic Longhair",
-      "Mixed Breed",
-      "Other",
-    ],
-    rabbit: [
-      "Dutch",
-      "Lionhead",
-      "Mini Lop",
-      "Netherland Dwarf",
-      "Rex",
-      "Flemish Giant",
-      "English Lop",
-      "Angora",
-      "Mixed Breed",
-      "Other",
-    ],
-    "guinea-pig": ["Abyssinian", "American", "Peruvian", "Silkie", "Skinny Pig", "Texel", "Mixed Breed", "Other"],
-    hamster: ["Syrian", "Dwarf Campbell", "Dwarf Winter White", "Roborovski", "Chinese", "Other"],
-    bird: ["Budgerigar", "Cockatiel", "Canary", "Finch", "Lovebird", "Parrot", "Parakeet", "Cockatoo", "Other"],
-    other: [],
-  }
-
   return (
     <section id="contact" className="py-12 sm:py-16 md:py-20 bg-muted/30 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6">
@@ -69,10 +14,10 @@ export function Contact() {
             New Patients Welcome
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-balance px-2 text-[#1e3a5f]">
-            Pre-Register Your Pet
+            Register Your Pet
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty px-4">
-            Join our mailing list to receive updates on our opening and special offers
+            Register your pet online and book your first appointment with us
           </p>
         </div>
 
@@ -83,9 +28,9 @@ export function Contact() {
                 <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-[#84cc16]" />
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-base sm:text-lg mb-1 text-[#1e3a5f]">Opening Spring 2026</h3>
+                <h3 className="font-bold text-base sm:text-lg mb-1 text-[#1e3a5f]">Now Open</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Pre-register now to receive exclusive updates and be notified when we open our doors
+                  Register your pet and book your first appointment online today
                 </p>
               </div>
             </CardContent>
@@ -134,8 +79,10 @@ export function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm sm:text-base">
-                <p className="text-muted-foreground font-semibold">[To be confirmed]</p>
-                <p className="text-sm text-muted-foreground mt-2">For registration enquiries</p>
+                <a href="tel:01738234811" className="text-[#00bcd4] font-semibold hover:underline">
+                  01738 234811
+                </a>
+                <p className="text-sm text-muted-foreground mt-2">For registration and appointment enquiries</p>
               </CardContent>
             </Card>
 
@@ -177,215 +124,44 @@ export function Contact() {
             </Card>
           </div>
 
-          {/* Registration Form */}
+          {/* Online Booking & Registration */}
           <Card className="lg:col-span-2 rounded-2xl shadow-xl border-0 ring-1 ring-gray-100 overflow-hidden">
             <div className="h-2 bg-gradient-to-r from-[#00bcd4] to-[#7ed321]" />
             <CardHeader className="pb-4 sm:pb-6">
-              <CardTitle className="text-xl sm:text-2xl md:text-3xl text-[#1e3a5f]">Pre-Registration Form</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl text-[#1e3a5f]">
+                Online Booking &amp; Registration
+              </CardTitle>
               <CardDescription className="text-sm sm:text-base mt-2">
-                Join our mailing list to receive updates on our opening and special offers. We'll contact you with
-                exclusive updates as we approach our Spring 2026 opening.
+                Register your pet and book your first appointment online through our secure booking system. It only
+                takes a few minutes to get started.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <form method="POST" action="https://formspree.io/f/mqarynkl" className="space-y-4 sm:space-y-6">
-                <input type="hidden" name="_subject" value="New Pre-Registration from Almond Vet Care Website" />
-                <input type="hidden" name="_next" value="/thank-you" />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                      Your Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      required
-                      placeholder="John Smith"
-                      className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="john@example.com"
-                      className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium text-gray-700">
-                      Phone Number *
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      placeholder="01738 123456"
-                      className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="town" className="text-sm font-medium text-gray-700">
-                      Town/Village *
-                    </label>
-                    <Input
-                      id="town"
-                      name="town"
-                      required
-                      placeholder="Perth"
-                      className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                    />
-                  </div>
-                </div>
-
-                <div className="border-t border-gray-100 pt-6 sm:pt-8">
-                  <h3 className="font-bold text-lg text-[#1e3a5f] mb-4 sm:mb-6 flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-full bg-[#7ed321]/20 flex items-center justify-center text-[#7ed321] text-sm">
-                      🐾
-                    </span>
-                    Pet Information
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="petName" className="text-sm font-medium text-gray-700">
-                        Pet's Name *
-                      </label>
-                      <Input
-                        id="petName"
-                        name="petName"
-                        required
-                        placeholder="Max"
-                        className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="petType" className="text-sm font-medium text-gray-700">
-                        Type of Pet *
-                      </label>
-                      <select
-                        id="petType"
-                        name="petType"
-                        required
-                        value={selectedPetType}
-                        onChange={(e) => setSelectedPetType(e.target.value)}
-                        className="flex h-11 sm:h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00bcd4] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      >
-                        <option value="">Select pet type</option>
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                        <option value="rabbit">Rabbit</option>
-                        <option value="guinea-pig">Guinea Pig</option>
-                        <option value="hamster">Hamster</option>
-                        <option value="gerbil">Gerbil</option>
-                        <option value="bird">Bird</option>
-                        <option value="ferret">Ferret</option>
-                        <option value="chinchilla">Chinchilla</option>
-                        <option value="rat">Rat</option>
-                        <option value="mouse">Mouse</option>
-                        <option value="reptile">Reptile</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6">
-                    <div className="space-y-2">
-                      <label htmlFor="petAge" className="text-sm font-medium text-gray-700">
-                        Pet's Age
-                      </label>
-                      <Input
-                        id="petAge"
-                        name="petAge"
-                        placeholder="e.g., 2 years"
-                        className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="petBreed" className="text-sm font-medium text-gray-700">
-                        Breed
-                      </label>
-                      {selectedPetType && breedOptions[selectedPetType as keyof typeof breedOptions]?.length > 0 ? (
-                        <select
-                          id="petBreed"
-                          name="petBreed"
-                          className="flex h-11 sm:h-12 w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00bcd4] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                          <option value="">Select breed</option>
-                          {breedOptions[selectedPetType as keyof typeof breedOptions].map((breed) => (
-                            <option key={breed} value={breed}>
-                              {breed}
-                            </option>
-                          ))}
-                        </select>
-                      ) : (
-                        <Input
-                          id="petBreed"
-                          name="petBreed"
-                          placeholder="e.g., Labrador"
-                          className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                        />
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 mt-4 sm:mt-6">
-                    <label htmlFor="currentVet" className="text-sm font-medium text-gray-700">
-                      Current Veterinary Practice (if any)
-                    </label>
-                    <Input
-                      id="currentVet"
-                      name="currentVet"
-                      placeholder="Name of current vet"
-                      className="rounded-xl h-11 sm:h-12 bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4]"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2 pt-2">
-                  <label htmlFor="message" className="text-sm font-medium text-gray-700">
-                    Additional Information
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    placeholder="Any questions or special requirements for your pet?"
-                    className="rounded-xl bg-gray-50 border-gray-200 focus:border-[#00bcd4] focus:ring-[#00bcd4] resize-none"
-                  />
-                </div>
-
-                <div className="flex items-start gap-3 pt-2">
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    id="consent"
-                    required
-                    className="mt-1 w-4 h-4 text-[#00bcd4] rounded border-gray-300 focus:ring-[#00bcd4]"
-                  />
-                  <label htmlFor="consent" className="text-sm text-gray-700">
-                    I agree to be contacted by Almond Vet Care and consent to my information being stored in accordance
-                    with the Privacy Policy. *
-                  </label>
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#7ed321] hover:from-[#00a5bd] hover:to-[#6bc019] text-white font-bold py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-base sm:text-lg h-12 sm:h-14"
-                >
-                  Pre-Register Now
-                </Button>
-              </form>
+            <CardContent className="flex flex-col items-center text-center gap-6 py-6 sm:py-10">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-[#00bcd4]/15 to-[#7ed321]/15 flex items-center justify-center">
+                <Calendar className="w-8 h-8 sm:w-10 sm:h-10 text-[#00bcd4]" />
+              </div>
+              <div className="max-w-md">
+                <h3 className="text-lg sm:text-xl font-bold text-[#1e3a5f] mb-2">Ready to join Almond Vet Care?</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  Use our online portal to register your details, add your pet&apos;s information, and book an
+                  appointment all in one place.
+                </p>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#00bcd4] to-[#7ed321] hover:from-[#00a5bd] hover:to-[#6bc019] text-white font-bold px-8 py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] text-base sm:text-lg h-12 sm:h-14"
+              >
+                <a href="https://my.provet.com/almond-vet-care-limited" target="_blank" rel="noopener noreferrer">
+                  Book &amp; Register Online
+                </a>
+              </Button>
+              <p className="text-sm text-muted-foreground">
+                Prefer to talk to us? Call{" "}
+                <a href="tel:01738234811" className="text-[#00bcd4] font-medium hover:underline">
+                  01738 234811
+                </a>
+              </p>
             </CardContent>
           </Card>
         </div>

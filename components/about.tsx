@@ -35,7 +35,7 @@ export function About() {
               </p>
               <p>
                 We're looking forward to getting to know you and your pets, building lasting relationships based on
-                trust and understanding. Pre-register now to secure your place as a founding client.
+                trust and understanding. Register now to secure your place as a founding client.
               </p>
             </div>
 
@@ -58,7 +58,7 @@ export function About() {
                 size="lg"
                 className="w-full sm:w-auto bg-[#1e3a5f] hover:bg-[#1e3a5f]/90 text-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all h-12 sm:h-auto"
               >
-                <a href="#contact">Pre-Register Your Pet</a>
+                <a href="#contact">Register Your Pet</a>
               </Button>
               <Button
                 asChild

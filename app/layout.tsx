@@ -73,7 +73,7 @@ export default function RootLayout({
               url: "https://almondvetcare.org",
               logo: "https://almondvetcare.org/images/almond-circle-logo.png",
               image: "https://almondvetcare.org/images/almond-circle-logo.png",
-              telephone: "[To be confirmed]",
+              telephone: "+441738234811",
               email: "reception@almondvetcare.org",
               address: {
                 "@type": "PostalAddress",
