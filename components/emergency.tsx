@@ -41,7 +41,9 @@ export function Emergency() {
                   </div>
                   <div>
                     <p className="font-semibold mb-1 text-[#1e3a5f]">Emergency Line</p>
-                    <p className="text-xl sm:text-2xl font-bold text-red-600">[To be added]</p>
+                    <a href="tel:01382690723" className="text-xl sm:text-2xl font-bold text-red-600 hover:underline">
+                      01382 690723
+                    </a>
                   </div>
                 </div>
 
@@ -51,7 +53,8 @@ export function Emergency() {
                   </div>
                   <div>
                     <p className="font-semibold mb-1 text-[#1e3a5f]">Out of Hours Provider</p>
-                    <p className="text-lg sm:text-xl font-medium">Vets Now Dundee</p>
+                    <p className="text-lg sm:text-xl font-medium text-[#1e3a5f]">Vets Now Dundee</p>
+                    <p className="text-sm sm:text-base text-muted-foreground">5 King&apos;s Cross Rd, Dundee DD2 3PT</p>
                   </div>
                 </div>
               </div>

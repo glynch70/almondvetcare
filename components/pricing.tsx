@@ -13,47 +13,49 @@ export function Pricing() {
     {
       title: "Surgical Procedures",
       items: [
-        { procedure: "Neutering - Cat (male)", price: "£[TBC]" },
-        { procedure: "Neutering - Cat (female)", price: "£[TBC]" },
-        { procedure: "Neutering - Dog (male)", price: "£[TBC]" },
-        { procedure: "Neutering - Dog (female)", price: "£[TBC]" },
-        { procedure: "Dental Scale & Polish", price: "£[TBC]" },
+        { procedure: "Bitch spay", price: "£430" },
+        { procedure: "Dog castrate", price: "£300" },
+        { procedure: "Cat spay", price: "£140" },
+        { procedure: "Cat castrate", price: "£100" },
+        { procedure: "Rabbit spay", price: "£270" },
+        { procedure: "Rabbit castrate", price: "£175" },
+        { procedure: "Dentals from", price: "£400" },
       ],
     },
     {
       title: "Diagnostics",
       items: [
-        { procedure: "Digital X-ray", price: "£[TBC]" },
-        { procedure: "Ultrasound Scan", price: "£[TBC]" },
-        { procedure: "In-house Blood Tests", price: "£[TBC]" },
+        { procedure: "Ultrasound scan", price: "£220" },
+        { procedure: "FAST scan", price: "£110" },
       ],
     },
     {
       title: "Routine Services",
       items: [
-        { procedure: "Consultation", price: "£[TBC]" },
-        { procedure: "Health Check", price: "£[TBC]" },
-        { procedure: "Microchipping", price: "£[TBC]" },
-        { procedure: "Nail Clipping", price: "£[TBC]" },
+        { procedure: "Consultation", price: "£52" },
+        { procedure: "Follow up consultation", price: "£48" },
+        { procedure: "Nail clip", price: "£25" },
+        { procedure: "Empty anal glands", price: "£25" },
+        { procedure: "Microchip", price: "£25" },
+        { procedure: "Prescription (up to 3 medications)", price: "£21" },
       ],
     },
     {
       title: "Vaccinations",
       items: [
-        { procedure: "Dog - Primary Course", price: "£[TBC]" },
-        { procedure: "Dog - Annual Booster", price: "£[TBC]" },
-        { procedure: "Cat - Primary Course", price: "£[TBC]" },
-        { procedure: "Cat - Annual Booster", price: "£[TBC]" },
-        { procedure: "Kennel Cough", price: "£[TBC]" },
+        { procedure: "Annual vaccination - dog", price: "£65" },
+        { procedure: "Annual vaccination - cat", price: "£67" },
+        { procedure: "Dog primary vaccine course (up to 3 appointments)", price: "£99" },
+        { procedure: "Cat primary vaccine course (2 appointments)", price: "£99" },
+        { procedure: "KC vaccine", price: "£50" },
+        { procedure: "KC vaccine at time of other vaccine", price: "£35" },
       ],
     },
     {
       title: "Other Services",
       items: [
-        { procedure: "Animal Health Certificate", price: "£[TBC]" },
-        { procedure: "Home Visit", price: "£[TBC]" },
-        { procedure: "Acupuncture", price: "£[TBC]" },
-        { procedure: "Physiotherapy", price: "£[TBC]" },
+        { procedure: "Animal health certificate", price: "£200" },
+        { procedure: "Put to sleep (including sedation and general anaesthetic)", price: "£130" },
       ],
     },
   ]
@@ -119,6 +121,10 @@ export function Pricing() {
         </div>
 
         <div className="max-w-4xl mx-auto mt-8 space-y-2 text-xs sm:text-sm text-muted-foreground">
+          <p className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00bcd4]" />
+            All prices for surgical procedures include a pre-op assessment
+          </p>
           <p className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00bcd4]" />
             All prices include VAT

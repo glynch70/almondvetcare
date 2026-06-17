@@ -72,7 +72,7 @@ export function Team() {
             <div className="mb-4 sm:mb-6">
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg group-hover:border-[#00bcd4] transition-colors duration-300">
                 <img
-                  src="/images/nurse-claire.png"
+                  src="/images/claire.png"
                   alt="Claire, Head Nurse"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -88,7 +88,11 @@ export function Team() {
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
               Claire is passionate about sharing her knowledge and experience with the wider team and is always on hand
               to offer guidance and support when needed. Although she enjoys all aspects of veterinary nursing, Claire
-              has a particular interest in inpatient care, post-operative nursing, and emergency and critical care.
+              has a particular interest in inpatient care, post-operative nursing, and emergency and critical care. She
+              especially enjoys managing medical cases and building strong bonds with her patients to help them feel
+              safe, calm, and comfortable within the veterinary environment.
+            </p>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-3 sm:mt-4">
               Outside of work, Claire enjoys reading, spending time with family and friends, and going on adventures
               with her Maremma Sheepdog, Ivar.
             </p>
@@ -99,7 +103,7 @@ export function Team() {
             <div className="mb-4 sm:mb-6">
               <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-lg group-hover:border-[#00bcd4] transition-colors duration-300">
                 <img
-                  src="/images/nurse-katie.png"
+                  src="/images/katie-nurse.png"
                   alt="Katie, Veterinary Nurse"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
