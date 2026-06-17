@@ -99,7 +99,11 @@ export function Footer() {
               <li>Lawgrove Place</li>
               <li>Inveralmond Industrial Estate</li>
               <li>Perth, PH1 3XQ</li>
-              <li className="pt-2">[To be confirmed]</li>
+              <li className="pt-2">
+                <a href="tel:01738234811" className="hover:text-primary-foreground transition-colors">
+                  01738 234811
+                </a>
+              </li>
               <li>reception@almondvetcare.org</li>
             </ul>
           </div>
