@@ -55,7 +55,7 @@ export function Contact() {
                   <br />
                   Perth, PH1 3XQ
                 </p>
-                <p className="text-sm text-[#7ed321] font-bold mt-3">Opening Spring 2026</p>
+                <p className="text-sm text-[#7ed321] font-bold mt-3">Now Open</p>
                 <div className="mt-4 rounded-xl overflow-hidden border-2 border-gray-100 shadow-inner">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2230.5!2d-3.468833!3d56.420861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTbCsDI1JzE1LjEiTiAzwrAyOCcwNy44Ilc!5e0!3m2!1sen!2suk!4v1234567890"
@@ -102,7 +102,7 @@ export function Contact() {
               <CardHeader className="pb-3">
                 <CardTitle className="flex items-center gap-2 sm:gap-3 text-base sm:text-lg text-[#1e3a5f]">
                   <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#00bcd4]" />
-                  Opening Hours (from Spring 2026)
+                  Opening Hours
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm sm:text-base">
