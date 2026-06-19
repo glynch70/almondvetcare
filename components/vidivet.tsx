@@ -55,7 +55,7 @@ export function Vidivet() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 size="lg"
-                className="rounded-full bg-[#6b2c5f] text-white hover:bg-[#5a2450] px-8 h-13 text-base shadow-lg shadow-[#6b2c5f]/20"
+                className="rounded-full bg-[#6b2c5f] text-white hover:bg-[#5a2450] px-9 h-15 text-base shadow-lg shadow-[#6b2c5f]/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-[#6b2c5f]/30"
               >
                 Activate Vidivet
                 <ArrowRight className="ml-1 h-4 w-4" />
@@ -64,8 +64,11 @@ export function Vidivet() {
                 size="lg"
                 variant="outline"
                 className="rounded-full border-2 border-[#6b2c5f]/30 text-[#6b2c5f] hover:bg-[#6b2c5f]/5 px-8 h-13 text-base bg-transparent"
+                asChild
               >
-                Learn More
+                <a href="https://go.vidivet.com/almond-vetcare" target="_blank" rel="noopener noreferrer">
+                  Learn More
+                </a>
               </Button>
             </div>
           </div>
