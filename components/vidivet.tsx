@@ -54,20 +54,32 @@ export function Vidivet() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
+                asChild
                 size="lg"
                 className="rounded-full bg-[#6b2c5f] text-white hover:bg-[#5a2450] px-8 h-13 text-base shadow-lg shadow-[#6b2c5f]/20"
               >
-                Activate Vidivet
-                <ArrowRight className="ml-1 h-4 w-4" />
+                <a
+                  href="https://vidivet.com/practices-createaccount/?partner=almond-vets"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Create Your Free Vidivet Account
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </a>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="rounded-full border-2 border-[#6b2c5f]/30 text-[#6b2c5f] hover:bg-[#6b2c5f]/5 px-8 h-13 text-base bg-transparent"
               >
-                Learn More
+                <a href="#how-vidivet-works">Learn More</a>
               </Button>
             </div>
+
+            <p className="mt-3 text-sm text-muted-foreground text-center sm:text-left">
+              Free for Almond Vet Care clients. Setup takes less than a minute.
+            </p>
           </div>
 
           {/* RIGHT - artwork 40% larger and dominant */}
@@ -122,7 +134,7 @@ export function Vidivet() {
         </div>
 
         {/* Trust box */}
-        <div className="mt-12 max-w-5xl mx-auto">
+        <div id="how-vidivet-works" className="mt-12 max-w-5xl mx-auto scroll-mt-24">
           <div className="relative overflow-hidden rounded-3xl bg-[#6b2c5f] p-10 md:p-14 text-center shadow-xl">
             <div
               aria-hidden="true"
