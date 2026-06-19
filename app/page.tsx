@@ -8,6 +8,7 @@ import { OurClinic } from "@/components/our-clinic"
 import { Emergency } from "@/components/emergency"
 import { CarePlan } from "@/components/care-plan"
 import { Pricing } from "@/components/pricing"
+import { Vidivet } from "@/components/vidivet"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { SpanielWithKitten } from "@/components/spaniel-with-kitten"
@@ -26,6 +27,7 @@ export default function Home() {
         <Emergency />
         <CarePlan />
         <Pricing />
+        <Vidivet />
         <SpanielWithKitten />
         <Contact />
       </main>
