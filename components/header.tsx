@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone } from "lucide-react"
+import { ChevronDown, Menu, X, Phone } from "lucide-react"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -18,6 +18,19 @@ export function Header() {
   }, [])
 
   const navLinks = [
+    { href: "#about", label: "About" },
+    { href: "#team", label: "Our Team" },
+    { href: "#services", label: "Services" },
+    { href: "#care-plan", label: "Care Plan" },
+    { href: "#contact", label: "Contact" },
+  ]
+
+  const desktopSubmenuLinks = [
+    { href: "#pricing", label: "Pricing" },
+    { href: "https://go.vidivet.com/almond-vetcare", label: "VidiVet", external: true },
+  ]
+
+  const mobileNavLinks = [
     { href: "#about", label: "About" },
     { href: "#team", label: "Our Team" },
     { href: "#services", label: "Services" },
@@ -60,6 +73,31 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#00b4d8] transition-all duration-300 group-hover:w-full rounded-full" />
               </a>
             ))}
+            <div className="relative group">
+              <button
+                type="button"
+                className="text-base font-bold text-[#1e3a5f]/70 hover:text-[#00b4d8] transition-all relative flex items-center gap-1 py-2"
+              >
+                More
+                <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+                <span className="absolute bottom-1 left-0 w-0 h-1 bg-[#00b4d8] transition-all duration-300 group-hover:w-full rounded-full" />
+              </button>
+              <div className="absolute right-0 top-full pt-4 opacity-0 pointer-events-none translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+                <div className="min-w-44 rounded-2xl bg-white shadow-2xl border border-gray-100 p-2">
+                  {desktopSubmenuLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className="block rounded-xl px-4 py-3 text-base font-bold text-[#1e3a5f]/70 hover:bg-[#f9fafb] hover:text-[#00b4d8] transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
             <div className="flex items-center gap-4 ml-4">
               <Button
                 asChild
@@ -115,7 +153,7 @@ export function Header() {
             </button>
 
             <div className="flex flex-col items-center justify-center flex-grow gap-2 min-h-fit">
-              {navLinks.map((link) => (
+              {mobileNavLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
