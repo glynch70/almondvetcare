@@ -18,11 +18,12 @@ export function Header() {
   }, [])
 
   const navLinks = [
-    { href: "#about", label: "About Us" },
+    { href: "#about", label: "About" },
+    { href: "#team", label: "Our Team" },
     { href: "#services", label: "Services" },
+    { href: "#care-plan", label: "Care Plan" },
+    { href: "https://go.vidivet.com/almond-vetcare", label: "VidiVet", external: true },
     { href: "#pricing", label: "Pricing" },
-    { href: "#founders", label: "Founders" },
-    { href: "#team", label: "Team" },
     { href: "#contact", label: "Contact" },
   ]
 
@@ -46,11 +47,13 @@ export function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-5 2xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-base font-bold text-[#1e3a5f]/70 hover:text-[#00b4d8] transition-all relative group"
               >
                 {link.label}
@@ -74,13 +77,13 @@ export function Header() {
                 asChild
                 className="bg-[#00b4d8] hover:bg-[#00acc1] text-white font-black rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 h-12 px-6"
               >
-                <a href="#contact">Pre-Register</a>
+                <a href="#contact">Contact</a>
               </Button>
             </div>
           </nav>
 
           {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-4">
+          <div className="flex xl:hidden items-center gap-4">
             <Button
               asChild
               size="icon"
@@ -101,8 +104,8 @@ export function Header() {
         </div>
 
         {/* Mobile Full-Screen Overlay Menu */}
-        <div className={`fixed inset-0 bg-[#1e3a5f] z-[9999] transition-all duration-300 lg:hidden flex flex-col ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
-          <div className="flex flex-col h-full p-8 pt-20">
+        <div className={`fixed inset-0 bg-[#1e3a5f] z-[9999] transition-all duration-300 xl:hidden flex flex-col ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+          <div className="flex flex-col h-full p-6 sm:p-8 pt-20 overflow-y-auto">
             <button
               className="absolute top-6 right-6 w-14 h-14 flex items-center justify-center text-white bg-white/10 rounded-2xl"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -111,13 +114,17 @@ export function Header() {
               <X size={40} />
             </button>
 
-            <div className="flex flex-col items-center justify-center flex-grow gap-2">
+            <div className="flex flex-col items-center justify-center flex-grow gap-2 min-h-fit">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-2xl font-bold text-white py-4 w-full text-center border-b border-white/10 last:border-0"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  className="text-2xl font-bold text-white min-h-11 py-3 w-full text-center border-b border-white/10 last:border-0 flex items-center justify-center"
+                  onClick={() => {
+                    if (!link.external) setIsMobileMenuOpen(false)
+                  }}
                 >
                   {link.label}
                 </a>
@@ -144,7 +151,7 @@ export function Header() {
                 className="bg-[#00b4d8] text-white font-black w-full py-5 rounded-3xl text-xl shadow-2xl text-center mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pre-Register
+                Contact
               </a>
             </div>
           </div>
