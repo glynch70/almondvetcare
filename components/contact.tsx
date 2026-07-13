@@ -103,7 +103,7 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 max-w-7xl mx-auto">
           {/* Form Column */}
           <div className="order-2 lg:order-1">
-            <div className="bg-[#f9fafb] p-8 sm:p-12 rounded-[2.5rem] shadow-xl border-2 border-gray-100">
+            <div className="bg-[#f9fafb] p-5 sm:p-12 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl border-2 border-gray-100">
               {/* Form Selector Tabs */}
               <div className="flex bg-gray-100 p-1.5 rounded-2xl mb-8">
                 <button
@@ -420,7 +420,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#1e3a5f] mb-1">Email Us</h4>
-                  <p className="text-[#00b4d8] font-bold group-hover:underline">reception@almondvetcare.org</p>
+                  <p className="text-[#00b4d8] font-bold group-hover:underline break-all">reception@almondvetcare.org</p>
                 </div>
               </a>
               <div className="flex gap-4">

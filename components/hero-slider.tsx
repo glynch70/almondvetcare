@@ -68,14 +68,17 @@ export function HeroSlider() {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
+          aria-hidden={index !== currentSlide}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
           }`}
         >
           <div className="absolute inset-0">
             <img
               src={slide.image}
               alt={slide.title}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#1e3a5f]/90 via-[#1e3a5f]/60 md:via-[#1e3a5f]/40 to-transparent" />
@@ -111,7 +114,7 @@ export function HeroSlider() {
                   size="lg"
                   className="w-full sm:w-auto bg-[#00bcd4] hover:bg-[#00acc1] text-white text-lg h-16 px-10 font-black shadow-2xl rounded-2xl transition-all hover:-translate-y-1"
                 >
-                  <a href={slide.ctaLink}>
+                  <a href={slide.ctaLink} tabIndex={index === currentSlide ? 0 : -1}>
                     {slide.cta} <ArrowRight className="ml-2" size={24} />
                   </a>
                 </Button>
@@ -121,10 +124,20 @@ export function HeroSlider() {
         </div>
       ))}
 
-      <button onClick={goToPrevious} className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full transition-all">
+      <button
+        type="button"
+        aria-label="Previous hero slide"
+        onClick={goToPrevious}
+        className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full transition-all"
+      >
         <ChevronLeft size={32} />
       </button>
-      <button onClick={goToNext} className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full transition-all">
+      <button
+        type="button"
+        aria-label="Next hero slide"
+        onClick={goToNext}
+        className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full transition-all"
+      >
         <ChevronRight size={32} />
       </button>
 
@@ -132,6 +145,9 @@ export function HeroSlider() {
         {slides.map((_, index) => (
           <button
             key={index}
+            type="button"
+            aria-label={`Show hero slide ${index + 1}`}
+            aria-current={index === currentSlide ? "true" : undefined}
             onClick={() => goToSlide(index)}
             className={`h-3 rounded-full transition-all ${
               index === currentSlide ? "bg-white w-10" : "bg-white/30 w-3"

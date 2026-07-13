@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-[#84cc16] font-bold">E:</span>
-                <a href="mailto:reception@almondvetcare.org" className="hover:text-white transition-colors">reception@almondvetcare.org</a>
+                <a href="mailto:reception@almondvetcare.org" className="hover:text-white transition-colors break-all">reception@almondvetcare.org</a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-[#84cc16] font-bold">T:</span>

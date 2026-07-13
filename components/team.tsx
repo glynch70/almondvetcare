@@ -1,8 +1,3 @@
-"use client"
-
-import { useRef } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-
 const teamMembers = [
   {
     name: "Dr Katie Jones",
@@ -39,60 +34,26 @@ const teamMembers = [
 ]
 
 export function Team() {
-  const sliderRef = useRef<HTMLDivElement | null>(null)
-
-  const scrollTeam = (direction: "previous" | "next") => {
-    const slider = sliderRef.current
-    if (!slider) return
-    const cardWidth = slider.querySelector("article")?.clientWidth ?? 320
-    slider.scrollBy({
-      left: direction === "next" ? cardWidth + 24 : -(cardWidth + 24),
-      behavior: "smooth",
-    })
-  }
-
   return (
     <section id="team" className="py-10 sm:py-14 bg-[#f9fafb] scroll-mt-20 px-5 sm:px-10">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10 sm:mb-12">
-          <div className="text-center sm:text-left">
-            <h2 className="text-3xl sm:text-5xl font-bold mb-4 text-[#1e3a5f]">Meet the Team</h2>
-            <div className="w-20 h-1.5 bg-[#7ed321] mx-auto sm:mx-0 mt-6 rounded-full" />
-          </div>
-          <div className="hidden md:flex gap-3">
-            <button
-              type="button"
-              aria-label="Previous team member"
-              onClick={() => scrollTeam("previous")}
-              className="w-12 h-12 rounded-full bg-white text-[#1e3a5f] shadow-lg flex items-center justify-center hover:text-[#00b4d8] transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              type="button"
-              aria-label="Next team member"
-              onClick={() => scrollTeam("next")}
-              className="w-12 h-12 rounded-full bg-white text-[#1e3a5f] shadow-lg flex items-center justify-center hover:text-[#00b4d8] transition-colors"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-5xl font-bold mb-4 text-[#1e3a5f]">Meet the Team</h2>
+          <div className="w-20 h-1.5 bg-[#7ed321] mx-auto mt-6 rounded-full" />
         </div>
 
-        <div
-          ref={sliderRef}
-          className="flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-4 px-4 max-w-7xl sm:mx-auto sm:px-0"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {teamMembers.map((member) => (
             <article
               key={member.name}
-              className="snap-start shrink-0 w-[82vw] sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-white rounded-[2rem] p-5 sm:p-6 border-2 border-gray-100 shadow-lg flex flex-col overflow-hidden"
+              className="bg-white rounded-[2rem] p-5 sm:p-6 border-2 border-gray-100 shadow-lg flex flex-col overflow-hidden h-full"
             >
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-md mb-6 bg-gray-100">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-md mb-6 bg-gray-100">
                 <img
                   src={member.image}
                   alt={member.imageAlt}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: member.objectPosition }}
                 />

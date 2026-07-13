@@ -5,6 +5,31 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Menu, X, Phone } from "lucide-react"
 
+type NavLink = {
+  href: string
+  label: string
+  external?: boolean
+}
+
+const primaryNavLinks: NavLink[] = [
+  { href: "#about", label: "About" },
+  { href: "#team", label: "Our Team" },
+  { href: "#services", label: "Services" },
+  { href: "#care-plan", label: "Care Plan" },
+  { href: "#contact", label: "Contact" },
+]
+
+const secondaryNavLinks: NavLink[] = [
+  { href: "#pricing", label: "Pricing" },
+  { href: "https://go.vidivet.com/almond-vetcare", label: "VidiVet", external: true },
+]
+
+const mobileNavLinks = [
+  ...primaryNavLinks.slice(0, 4),
+  ...[...secondaryNavLinks].reverse(),
+  primaryNavLinks[4],
+]
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -17,34 +42,28 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#team", label: "Our Team" },
-    { href: "#services", label: "Services" },
-    { href: "#care-plan", label: "Care Plan" },
-    { href: "#contact", label: "Contact" },
-  ]
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isMobileMenuOpen])
 
-  const desktopSubmenuLinks = [
-    { href: "#pricing", label: "Pricing" },
-    { href: "https://go.vidivet.com/almond-vetcare", label: "VidiVet", external: true },
-  ]
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false)
+    }
+    window.addEventListener("keydown", closeOnEscape)
+    return () => window.removeEventListener("keydown", closeOnEscape)
+  }, [])
 
-  const mobileNavLinks = [
-    { href: "#about", label: "About" },
-    { href: "#team", label: "Our Team" },
-    { href: "#services", label: "Services" },
-    { href: "#care-plan", label: "Care Plan" },
-    { href: "https://go.vidivet.com/almond-vetcare", label: "VidiVet", external: true },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#contact", label: "Contact" },
-  ]
+  const closeMobileMenu = () => setIsMobileMenuOpen(false)
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${isScrolled ? "bg-white shadow-xl py-2" : "bg-white py-4"}`}>
       <div className="container mx-auto px-4 sm:px-10">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="#" className="flex items-center gap-3 group" aria-label="Almond Vet Care home">
             <div className={`relative transition-all duration-500 ${isScrolled ? "w-12 h-12" : "w-14 h-14 sm:w-16 sm:h-16"} shadow-lg rounded-full overflow-hidden border-2 border-white`}>
               <Image
                 src="/images/almond-circle-logo.png"
@@ -61,12 +80,10 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center gap-5 2xl:gap-8">
-            {navLinks.map((link) => (
+            {primaryNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-base font-bold text-[#1e3a5f]/70 hover:text-[#00b4d8] transition-all relative group"
               >
                 {link.label}
@@ -76,6 +93,7 @@ export function Header() {
             <div className="relative group">
               <button
                 type="button"
+                aria-haspopup="true"
                 className="text-base font-bold text-[#1e3a5f]/70 hover:text-[#00b4d8] transition-all relative flex items-center gap-1 py-2"
               >
                 More
@@ -84,7 +102,7 @@ export function Header() {
               </button>
               <div className="absolute right-0 top-full pt-4 opacity-0 pointer-events-none translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
                 <div className="min-w-44 rounded-2xl bg-white shadow-2xl border border-gray-100 p-2">
-                  {desktopSubmenuLinks.map((link) => (
+                  {secondaryNavLinks.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
@@ -134,6 +152,8 @@ export function Header() {
             <button
               className="w-12 h-12 flex flex-col items-center justify-center text-[#1e3a5f] bg-[#f9fafb] rounded-2xl shadow-inner border border-gray-100 z-[1001]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
               aria-label="Toggle menu"
             >
               <Menu size={32} />
@@ -142,11 +162,18 @@ export function Header() {
         </div>
 
         {/* Mobile Full-Screen Overlay Menu */}
-        <div className={`fixed inset-0 bg-[#1e3a5f] z-[9999] transition-all duration-300 xl:hidden flex flex-col ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
-          <div className="flex flex-col h-full p-6 sm:p-8 pt-20 overflow-y-auto">
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-hidden={!isMobileMenuOpen}
+          className={`fixed inset-0 bg-[#1e3a5f] z-[9999] transition-all duration-300 xl:hidden flex flex-col ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <div className="flex flex-col h-full p-5 sm:p-8 pt-20 overflow-y-auto overscroll-contain">
             <button
               className="absolute top-6 right-6 w-14 h-14 flex items-center justify-center text-white bg-white/10 rounded-2xl"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
+              tabIndex={isMobileMenuOpen ? 0 : -1}
               aria-label="Close menu"
             >
               <X size={40} />
@@ -160,9 +187,8 @@ export function Header() {
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
                   className="text-2xl font-bold text-white min-h-11 py-3 w-full text-center border-b border-white/10 last:border-0 flex items-center justify-center"
-                  onClick={() => {
-                    if (!link.external) setIsMobileMenuOpen(false)
-                  }}
+                  onClick={closeMobileMenu}
+                  tabIndex={isMobileMenuOpen ? 0 : -1}
                 >
                   {link.label}
                 </a>
@@ -171,7 +197,8 @@ export function Header() {
               <a
                 href="#emergency"
                 className="bg-[#dc2626] text-white font-black w-full py-5 rounded-3xl text-xl shadow-2xl text-center mt-8"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
+                tabIndex={isMobileMenuOpen ? 0 : -1}
               >
                 Emergency Care
               </a>
@@ -180,14 +207,16 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#7ed321] text-white font-black w-full py-5 rounded-3xl text-xl shadow-2xl text-center mt-4"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
+                tabIndex={isMobileMenuOpen ? 0 : -1}
               >
                 Book Now
               </a>
               <a
                 href="#contact"
                 className="bg-[#00b4d8] text-white font-black w-full py-5 rounded-3xl text-xl shadow-2xl text-center mt-4"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
+                tabIndex={isMobileMenuOpen ? 0 : -1}
               >
                 Contact
               </a>

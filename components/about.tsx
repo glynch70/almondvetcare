@@ -141,6 +141,7 @@ export function About() {
                     src={image.src}
                     alt={image.alt}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full shrink-0 object-cover"
                     style={{ objectPosition: image.objectPosition }}
                   />

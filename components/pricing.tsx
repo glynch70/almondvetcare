@@ -84,10 +84,10 @@ export function Pricing() {
                     {category.items.map((item, itemIdx) => (
                       <div
                         key={itemIdx}
-                        className="flex justify-between items-center py-4 border-b border-gray-50 last:border-0 hover:bg-gray-50/50 px-3 rounded-xl transition-colors"
+                        className="flex justify-between items-start gap-4 py-4 border-b border-gray-50 last:border-0 hover:bg-gray-50/50 px-3 rounded-xl transition-colors"
                       >
-                        <span className="text-gray-700 font-medium text-lg">{item.procedure}</span>
-                        <span className="font-bold text-[#00b4d8] text-lg whitespace-nowrap ml-4">{item.price}</span>
+                        <span className="min-w-0 text-gray-700 font-medium text-base sm:text-lg leading-snug">{item.procedure}</span>
+                        <span className="font-bold text-[#00b4d8] text-base sm:text-lg whitespace-nowrap">{item.price}</span>
                       </div>
                     ))}
                   </div>

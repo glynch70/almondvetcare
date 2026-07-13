@@ -91,6 +91,8 @@ export function OurClinic() {
                   key={image.src}
                   src={image.src}
                   alt={image.alt}
+                  loading={index === selectedImage ? "eager" : "lazy"}
+                  decoding="async"
                   draggable={false}
                   className={`absolute inset-0 w-full h-full select-none object-cover transition-opacity duration-500 ease-out group-hover:scale-110 ${
                     index === selectedImage ? "opacity-100" : "opacity-0"
@@ -135,6 +137,8 @@ export function OurClinic() {
                     src={image.src}
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                     style={{ objectPosition: image.objectPosition }}
                   />
